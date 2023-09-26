@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class Poisson:
     def __init__(self, data=None, lambtha=1.):
         if data is None:
