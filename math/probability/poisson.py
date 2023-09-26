@@ -12,7 +12,7 @@ class Poisson:
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
             self.lambtha = self.calculate_lambtha(data)
-    
+
     def calculate_lambtha(self, data):
         total = sum(data)
         n = len(data)
