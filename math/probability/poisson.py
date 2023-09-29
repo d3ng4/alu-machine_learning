@@ -16,5 +16,20 @@ class Poisson:
 
     def calculate_lambtha(self, data):
         total = sum(data)
-        n = len(data)
-        return total / n
+        return float(total) / len(data)
+
+    def pmf(self, k):
+        k = int(k)
+        if k < 0:
+            return 0
+        else:
+            # Calculate the PMF using the Poisson distribution formula
+            pmf_value = (self.lambtha ** k) * (2.71828 **
+                                               (-self.lambtha)) / self.factorial(k)
+            return pmf_value
+
+    def factorial(self, n):
+        if n == 0 or n == 1:
+            return 1
+        else:
+            return n * self.factorial(n - 1)
