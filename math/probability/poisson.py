@@ -28,6 +28,15 @@ class Poisson:
             pmf_value /= self.factorial(k)
             return pmf_value
 
+    def cdf(self, k):
+        k = int(k)
+        if k < 0:
+            return 0
+        else:
+            # Calculate the CDF using the Poisson distribution formula
+            cdf_value = sum(self.pmf(i) for i in range(k + 1))
+            return cdf_value
+
     def factorial(self, n):
         if n == 0 or n == 1:
             return 1
