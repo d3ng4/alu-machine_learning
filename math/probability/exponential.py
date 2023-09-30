@@ -25,3 +25,11 @@ class Exponential:
             # Calculate the PDF using the exponential distribution formula
             pdf_value = self.lambtha * (2.71828 ** (-self.lambtha * x))
             return pdf_value
+
+    def cdf(self, x):
+        if x < 0:
+            return 0
+        else:
+            # Calculate the CDF using the exponential distribution formula
+            cdf_value = 1 - (2.71828 ** (-self.lambtha * x))
+            return cdf_value
