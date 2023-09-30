@@ -17,3 +17,11 @@ class Exponential:
     def calculate_lambtha(self, data):
         total = sum(data)
         return float(len(data)) / total
+
+    def pdf(self, x):
+        if x < 0:
+            return 0
+        else:
+            # Calculate the PDF using the exponential distribution formula
+            pdf_value = self.lambtha * (2.71828 ** (-self.lambtha * x))
+            return pdf_value
