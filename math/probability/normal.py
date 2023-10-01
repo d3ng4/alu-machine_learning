@@ -28,3 +28,9 @@ class Normal:
     def x_value(self, z):
         x = z * self.stddev + self.mean
         return x
+
+    def pdf(self, x):
+        exponent = -0.5 * ((x - self.mean) / self.stddev) ** 2
+        coefficient = 1 / (self.stddev * math.sqrt(2 * math.pi))
+        pdf_value = coefficient * math.exp(exponent)
+        return pdf_value
