@@ -34,3 +34,8 @@ class Normal:
         coefficient = 1 / (self.stddev * math.sqrt(2 * math.pi))
         pdf_value = coefficient * math.exp(exponent)
         return pdf_value
+
+    def cdf(self, x):
+        z = (x - self.mean) / self.stddev
+        cdf_value = 0.5 * (1 + math.erf(z / math.sqrt(2)))
+        return cdf_value
