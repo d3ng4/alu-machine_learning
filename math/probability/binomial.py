@@ -27,8 +27,8 @@ class Binomial:
         k = int(k)
         if k < 0 or k > self.n:
             return 0
-        coefficient = self._binomial_coefficient(self.n, k)
-        pmf_value = coefficient * (self.p ** k) * ((1 - self.p) ** (self.n - k))
+        coeff = self._bin_coeff(self.n, k)
+        pmf_value = coeff * (self.p ** k) * ((1 - self.p) ** (self.n - k))
         return pmf_value
 
     def cdf(self, k):
@@ -40,11 +40,11 @@ class Binomial:
             cdf_value += self.pmf(i)
         return cdf_value
 
-    def _binomial_coefficient(self, n, k):
+    def _bin_coeff(self, n, k):
         numerator = self._factorial(n)
         denominator = self._factorial(k) * self._factorial(n - k)
-        coefficient = numerator / denominator
-        return coefficient
+        coeff = numerator / denominator
+        return coeff
 
     def _factorial(self, n):
         factorial = 1
