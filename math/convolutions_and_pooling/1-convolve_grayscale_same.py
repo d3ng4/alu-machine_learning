@@ -20,8 +20,7 @@ def convolve_grayscale_same(images, kernel):
         images, ((0, 0), (pad_h, pad_h), (pad_w, pad_w)), mode='constant'
     )
 
-    convolved_images = np.zeros_like(images)
-
+    convolved_images = np.zeros_like(images, dtype=np.float32)
     for i in range(h):
         for j in range(w):
             convolved_images[:, i, j] = np.sum(
