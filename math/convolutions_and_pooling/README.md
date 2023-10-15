@@ -1,1 +1,1 @@
-convulutions and pooling
+Convolutions and Pooling

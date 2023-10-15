@@ -1,21 +1,42 @@
 #!/usr/bin/env python3
+"""
+Defines a function that performs valid convolution
+on a grayscale image
+"""
 
-"""
-functions for convolving grayscale images with a given kernel.
-"""
 
 import numpy as np
 
 
 def convolve_grayscale_valid(images, kernel):
-    m, h, w = images.shape
-    kh, kw = kernel.shape
+    """
+    Performs a valid convolution on grayscale images
 
-    convolved_images = np.zeros((m, h - kh + 1, w - kw + 1))
+    parameters:
+        images [numpy.ndarray with shape (m, h, w)]:
+            contains multiple grayscale images
+            m: number of images
+            h: height in pixels of all images
+            w: width in pixels of all images
+        kernel [numpy.ndarray with shape (kh, kw)]:
+            contains the kernel for the convolution
+            kh: height of the kernel
+            kw: width of the kernel
 
-    for i in range(h - kh + 1):
-        for j in range(w - kw + 1):
-            convolved_images[:, i, j] = np.sum(
-                images[:, i:i+kh, j:j+kw] * kernel, axis=(1, 2))
+    function may only use two for loops maximum and no other loops are allowed
 
-    return convolved_images
+    returns:
+        numpy.ndarray contained convolved images
+    """
+    m = images.shape[0]
+    height = images.shape[1]
+    width = images.shape[2]
+    kh = kernel.shape[0]
+    kw = kernel.shape[1]
+    convoluted = np.zeros((m, height - kh + 1, width - kw + 1))
+    for h in range(height - kh + 1):
+        for w in range(width - kw + 1):
+            output = np.sum(images[:, h: h + kh, w: w + kw] * kernel,
+                            axis=1).sum(axis=1)
+            convoluted[:, h, w] = output
+    return convoluted
