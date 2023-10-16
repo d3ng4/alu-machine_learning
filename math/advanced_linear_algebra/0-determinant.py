@@ -6,15 +6,7 @@ Defines function that calculates the determinant of a matrix
 
 def determinant(matrix):
     """
-    Calculates the determinant of a matrix
-
-    parameters:
-        matrix [list of lists]:
-            matrix whose determinant should be calculated
-
-    returns:
-        the determinant of matrix
-    """
+    Calculates the determinant of a matrix"""
     if type(matrix) is not list:
         raise TypeError("matrix must be a list of lists")
     height = len(matrix)

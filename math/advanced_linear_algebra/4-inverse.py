@@ -7,14 +7,8 @@ Defines function that calculates the inverse of a matrix
 def inverse(matrix):
     """
     Calculates the inverse of a matrix
-
-    parameters:
-        matrix [list of lists]:
-            matrix whose inverse should be calculated
-
-    returns:
-        the inverse of matrix or None if matrix is singular
     """
+    
     if type(matrix) is not list:
         raise TypeError("matrix must be a list of lists")
     height = len(matrix)
@@ -39,14 +33,8 @@ def inverse(matrix):
 def adjugate(matrix):
     """
     Calculates the adjugate matrix of a matrix
-
-    parameters:
-        matrix [list of lists]:
-            matrix whose adjugate matrix should be calculated
-
-    returns:
-        the adjugate matrix of matrix
     """
+
     if type(matrix) is not list:
         raise TypeError("matrix must be a list of lists")
     height = len(matrix)

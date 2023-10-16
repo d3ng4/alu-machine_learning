@@ -6,15 +6,7 @@ Defines function that calculates the minor matrix of a matrix
 
 def minor(matrix):
     """
-    Calculates the minor matrix of a matrix
-
-    parameters:
-        matrix [list of lists]:
-            matrix whose minor matrix should be calculated
-
-    returns:
-        the minor matrix of matrix
-    """
+    Calculates the minor matrix of a matrix"""
     if type(matrix) is not list:
         raise TypeError("matrix must be a list of lists")
     height = len(matrix)
@@ -49,13 +41,6 @@ def minor(matrix):
 def determinant(matrix):
     """
     Calculates the determinant of a matrix
-
-    parameters:
-        matrix [list of lists]:
-            matrix whose determinant should be calculated
-
-    returns:
-        the determinant of matrix
     """
     if type(matrix) is not list:
         raise TypeError("matrix must be a list of lists")
